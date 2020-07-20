@@ -10,13 +10,13 @@ input{
 }
 #box1{
     float: right;
-    border: solid 1px red;
+    border: solid 4px whitesmoke;
     margin-right: 350px;
      font-family: choco;
      height: 350px;
 }
 #box2{
-    border: solid 1px red;
+    border: solid 4px whitesmoke;
     height: 350px;
     width: 450px;
     margin-left: 250px;
@@ -26,14 +26,14 @@ input{
 #box3
 {
     float: right;
-    border: solid 1px red;
+    border: solid 4px whitesmoke;
     margin-right: 350px;
      font-family: choco;
      height: 300px;
 }
 #results
 {
-    border: solid 1px red;
+    border: solid 4px whitesmoke;
     text-align: right; 
     direction: rtl;
     width: 450px;
@@ -41,7 +41,7 @@ input{
     font-family: choco;
 }
 #box4{
-    border: solid 1px red;
+    border: solid 4px whitesmoke;
     height: 150px;
     width: 450px;
     margin-left: 250px;
@@ -51,7 +51,7 @@ input{
 }
 #result
 {
-    border: solid 1px red;
+    border: solid 4px whitesmoke;
     text-align: right; 
     direction: rtl;
     width: 450px;
@@ -61,4 +61,12 @@ input{
 }
 label{
     font-size: 15px;
+}
+body{
+    background-image: url("moritz-kindler-mGFHA_0TWnA-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    color: whitesmoke;
 }

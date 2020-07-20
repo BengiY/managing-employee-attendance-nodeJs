@@ -15,7 +15,7 @@ router.post('/getWorkerByID', function (req, res) {
     const col = client.db(dbName).collection('Workers');
     col.findOne({ WorkerID: req.body.WorkerID }, function (err, result) {
       if (err) {
-        res.send('<b>error</b>');
+        res.send('ארעה שגיאה נסה שוב');
       }
       else {
         w = result;
@@ -35,9 +35,9 @@ router.post('/addWorker', function (req, res) {
       if (err) {
         console.log(err)
         res.status(500);
-        res.send('<b>error</b>');
+        res.send('ארעה איזשהי שגיאה נסה שוב');
       } else {
-        res.send('<b>sucess</b>');
+        res.send('נרשמת בהצלחה');
         newWorker=req.body;
         fs.readFile('employeeFile.json','utf-8', (err, buffer) => {
           if (err) return console.error('File read error: ', err)
@@ -65,7 +65,7 @@ router.post('/deletWorkerByID', function (req, res) {
       if (err) {
         console.log(err)
         res.status(500);
-        res.send('<b>error</b>');
+        res.send('ארעה שגיאה נסה שוב');
       } else {
         res.send(' עובד בעל ת"ז מספר '+req.body.WorkerID+" נמחק ");
       }
@@ -93,7 +93,7 @@ router.post('/getNamesAndFhone', function (req, res) {
         if (err) {
           console.log(err)
           res.status(500);
-          res.send('<b>error</b>');
+          res.send('ארעה שגיאה נסה שוב');
         } else {
           res.send(' עובד בעל ת"ז מספר '+req.body.WorkerID+" עודכן ");
         }
@@ -101,7 +101,7 @@ router.post('/getNamesAndFhone', function (req, res) {
     });
   });
 
-  
+  //הוספת שעת נוכחות
   router.post('/addp', function (req, res) {
     // var obj = {
     //   table: []
@@ -113,9 +113,9 @@ router.post('/getNamesAndFhone', function (req, res) {
         if (err) {
           console.log(err)
           res.status(500);
-          res.send('<b>error</b>');
+          res.send('ארעה שגיאה נסה שוב');
         } else {
-          res.send('sucess');
+          res.send('נוסף בהצלחה');
           fs.exists(req.body.WorkerIdP, function (exists) {
             //var str="id:"+req.body.WorkerIdP+" date: "+req.body.date+" start: "+req.body.start+" end: "+req.body.end+"/n";
             var dt = dateTime.create(req.body.date);
@@ -132,7 +132,7 @@ router.post('/getNamesAndFhone', function (req, res) {
       });
     });
   });
-  
+  //קבלת שעות נוכחות לפי תז
   router.post('/getPBiId', function (req, res) {
     if (fs.existsSync(req.body.WorkerIdP)) {
       var array = fs.readFileSync(req.body.WorkerIdP).toString().split('\n');

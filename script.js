@@ -18,7 +18,13 @@ $.post("http://localhost:3000/WorkerFunction/addWorker",
     isActive:status
   },
   function(data){
-    alert("Data: " + data);
+    alert(data);
+    document.getElementById("tz").value="";
+    document.getElementById("firstName").value="";
+    document.getElementById("lastName").value="";
+    document.getElementById("phone").value="";
+    document.getElementById("mail").value="";
+    document.getElementById("address").value="";
   });
 
 }
@@ -37,6 +43,7 @@ function getWorkerByID(){
     });
   
   }
+  //מחיקת עובד לפי תז
   function deletWorkerByID()
   {
     var id=document.getElementById("Id").value;
@@ -48,6 +55,7 @@ function getWorkerByID(){
         document.getElementById("results").innerHTML=data;
       }); 
   }
+  //קבלת רשימת שמות וטלפונים
   function getNamesAndFhone()
   {
     document.getElementById("results").innerHTML="";
@@ -60,10 +68,12 @@ function getWorkerByID(){
         });
       });
   }
+  //סגירת החלון
   function closeR()
   {
     document.getElementById("results").innerHTML=""; 
   }
+  //הצגת נתונים לעדכון
   function ShowToUpdate()
   {
     var id=document.getElementById("Id").value;
@@ -81,6 +91,7 @@ function getWorkerByID(){
       document.getElementById("address").value=data.WorkerAddres;
     });
   }
+  //עדכון עובד
   function UpdateW()
   {
     var id=document.getElementById("tz").value;
@@ -111,6 +122,7 @@ function getWorkerByID(){
       document.getElementById("address").value="";
     });
   }
+  //הוספת שעת נוכחות
     function addP()
     {
       var id=document.getElementById("IdP").value;
@@ -125,9 +137,10 @@ function getWorkerByID(){
         end:end
       },
       function(data){
-        alert("Data: " + data);
+        alert(data);
       });
     }
+    //קבלת שעות נוכחות ע"פ תז
   function  getPBiId()
   {
     document.getElementById("result").innerHTML="";

@@ -1,0 +1,69 @@
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="css.css">
+      <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </head>
+<body>
+  <!-- הוספת עובד -->
+  <h1>פרטים אישיים</h1>
+
+  <div id="box1">
+  <p>הקש פרטי עובד</p>
+  <input type="text" id="tz" placeholder="הכנס תז"/>
+  <br>
+  <input type="text" id="firstName" placeholder="הכנס שם"/>
+  <br>
+  <input type="text" id="lastName" placeholder="הכנס משפחה"/>
+  <br>
+  <input type="text" id="phone" placeholder="הכנס טלפון"/>
+  <br>
+  <input type="text" id="mail" placeholder="הכנס מייל"/>
+  <br>
+  <input type="text" id="address" placeholder="הכנס כתובת"/>
+  <br>
+  <input type="button" onclick="addWorker()" value="קליק להוספת עובד">
+  <br>
+</div>
+  <div id="box2">
+  <p>הקש ת"ז לעדכון או הצגת פרטי עובד</p>
+  <input type="text" id="Id" placeholder="הכנס תז"/>
+  <br>
+  <input type="button" onclick="getWorkerByID()" value="קליק להצגת עובד">
+  <br>
+  <input type="button" onclick="deletWorkerByID()" value="קליק למחיקת עובד">
+  <br>
+  <input type="button" onclick="ShowToUpdate()" value="קליק להצגת פרטי עובד לעדכון">
+  <br>
+  <input type="button" onclick="UpdateW()" value="קליק לעדכון עובד">
+  <br>
+  <input type="button" onclick="getNamesAndFhone()" value="קבלת רשימת שמות וטלפונים">
+  <input id="close" type="button" onclick="closeR()" value="סגור" visibility="hidden"/>
+</div>
+  <div id="results">
+  </div>
+  <br><br>
+  <h1>נוכחות עובדים</h1>
+  <div id="box3">
+    <p>הקש פרטי נוכחות</p>
+    <input type="text" id="IdP" placeholder="הכנס תז"/>
+    <br>
+    <input type="date" id="date" placeholder="הכנס תאריך"/>
+    <br>
+    <input type="time" id="start"/><label>:שעת התחלה</label>
+    <br>
+    <input type="time" id="end"/><label>:שעת סיום</label>
+    <br>
+    <input type="button" onclick="addP()" value="הוסף נוכחות"/>
+  </div> 
+   <div id="box4">
+    <p>הקש פרטי עובד</p>
+    <input type="text" id="tz4" placeholder="הכנס תז"/>
+    <br>
+    <input type="button" onclick="getPBiId()" value='קליק להצגת דו"ח שעות'>
+    <br>
+  </div>
+  <div id="result"></div>
+</body>
+
+</html>
